@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Doubler from './Doubler';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <h1>Маршрутный удвоитель</h1>
+        <p>Чтобы запустить удвоитель, введите маршрут. Допустимы только URL-адреса, состоящие из цифр!</p>
+        <Link to="/2">2</Link>
+        <Link to="/10">10</Link>
+        <Link to="/42">42</Link>
+        <Link to="/coffee">Coffee</Link>
+        <Route path="/:number">
+          <Doubler />
+        </Route>
+      </div>
+    </BrowserRouter>
   );
 }
 
