@@ -5,6 +5,7 @@ import Friends from './Friends';
 import Friend from './Friend';
 import Dashboard from './Dashboard';
 import serverData from '../serverData';
+import PageNotFound from './PageNotFound';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path='/friends/:id'>
             <Friend serverData={serverData} />
+          </Route>
+          <Route path='/*'>
+            <PageNotFound />
           </Route>
         </Switch>
       </div>
