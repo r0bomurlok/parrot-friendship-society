@@ -30,7 +30,7 @@ function App() {
           <Route path='/friends/:id'>
             <Friend serverData={serverData} />
           </Route>
-          <Route path='/*'>
+          <Route path='*'>
             <PageNotFound />
           </Route>
         </Switch>
